@@ -16,9 +16,67 @@ header {
 }
 
 header img {
-    height: 40px; /* Ajusta el tamaño del logo */
+    height: 100px; /* Ajusta el tamaño del logo */
     margin-right: 1rem; /* Espacio entre el logo y el texto */
 }
+
+#search-bar-container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search-bar {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#search-button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#search-button i {
+    font-size: 1rem;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 0.5rem;
+}
+
+
+
 
 main {
     display: flex;

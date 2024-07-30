@@ -176,3 +176,20 @@ function filterProducts() {
 
 // Añadir evento al botón de filtro
 document.getElementById('filter-button').addEventListener('click', filterProducts);
+
+
+//Funcionalidad del Botón de Búsqueda
+
+document.getElementById('search-button').addEventListener('click', function() {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        const productName = product.querySelector('h2').innerText.toLowerCase();
+        if (productName.includes(query)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
