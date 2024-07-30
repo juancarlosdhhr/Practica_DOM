@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,18 +8,76 @@
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
     <header>
+        <img src="assets\logopurplecomputer.jpg" alt="logo de la pagina web" id="header-logo">
         <h1>Tienda de Productos</h1>
     </header>
     <main>
         <section id="filters">
-            <!-- Filtros de búsqueda -->
+            <h2>Filtros de Búsqueda</h2>
+            <form id="filter-form">
+                <div>
+                    <label for="price-range">Rango de precios:</label>
+                    <select id="price-range">
+                        <option value="">Cualquier precio</option>
+                        <option value="0-300">Hasta 300€</option>
+                        <option value="301-600">301€ - 600€</option>
+                        <option value="601-900">601€ - 900€</option>
+                        <option value="901-1200">901€ - 1200€</option>
+                        <option value="1201-1500">1201€ - 1500€</option>
+                        <option value="1501-2000">1501€ - 2000€</option>
+                        <option value="2001-5000">2001€ - 5000€</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="brand">Marca:</label>
+                    <select id="brand">
+                        <option value="">Todas</option>
+                        <option value="HP">HP</option>
+                        <option value="Acer">Acer</option>
+                        <option value="Dell">Dell</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="ASUS">ASUS</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Microsoft">Microsoft</option>
+                        <option value="MSI">MSI</option>
+                        <option value="Huawei">Huawei</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="category">Categoría:</label>
+                    <select id="category">
+                        <option value="">Todas</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="desktops">Desktops</option>
+                        <option value="tablets">Tablets</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="processor">Familia de Procesador:</label>
+                    <select id="processor">
+                        <option value="">Todas</option>
+                        <option value="Intel">Intel</option>
+                        <option value="AMD">AMD</option>
+                        <option value="Apple M1">Apple M1</option>
+                    </select>
+                </div>
+                <button type="button" id="filter-button">Filtrar</button>
+            </form>
         </section>
         <section id="product-list">
-            <!-- Aquí se generarán las cartas de los productos -->
+            <ul id="product-container">
+                <!-- Aquí se generarán las cartas de los productos -->
+            </ul>
         </section>
     </main>
-   
+    
 </body>
 </html>
+
+
+ 

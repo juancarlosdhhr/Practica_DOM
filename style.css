@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,35 +10,93 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+    justify-content: space-between; /* Espacia el logo y el texto */
+}
+
+header img {
+    height: 40px; /* Ajusta el tamaño del logo */
+    margin-right: 1rem; /* Espacio entre el logo y el texto */
 }
 
 main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    height: calc(100vh - 70px); /* Ajusta el 70px al alto de tu header si es diferente */
 }
 
+/* Estilo para la barra lateral de filtros */
 #filters {
+    width: 20%;
     padding: 1rem;
     background-color: #f4f4f4;
+    overflow-y: auto; /* Permite el desplazamiento si hay muchos filtros */
 }
 
+/* Estilo para el formulario de filtros */
+#filter-form {
+    margin: 0;
+    padding: 0;
+}
+
+#filter-form > div {
+    margin-bottom: 20px;
+}
+
+#filter-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#filter-form select {
+    width: 80%; /* Ajusta el ancho de los desplegables */
+    padding: 10px;
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Estilo para el botón de filtro */
+#filter-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para la lista de productos */
 #product-list {
-    display: flex;
-    flex-wrap: wrap;
+    width: 80%;
     padding: 1rem;
+    overflow-y: auto;
 }
 
+/* Estilo para la lista de productos */
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta las columnas automáticamente */
+    gap: 1rem; /* Espacio entre los productos */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para cada tarjeta de producto */
 .product-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 1rem;
     padding: 1rem;
-    width: 300px;
     transition: transform 0.3s;
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto total */
 }
 
+/* Efecto al pasar el ratón sobre la tarjeta */
 .product-card:hover {
     transform: scale(1.05);
 }
@@ -56,18 +115,24 @@ main {
     margin: 0.5rem 0;
 }
 
-//RESPONSIVE
-
+/* Responsivo: tres productos por fila en pantallas grandes */
 @media (min-width: 768px) {
-    main {
-        flex-direction: row;
+    #product-container {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    }
+}
+
+/* Responsivo: un producto por fila en pantallas pequeñas */
+@media (max-width: 767px) {
+    #product-container {
+        grid-template-columns: 1fr; /* Una columna */
     }
 
     #filters {
-        width: 25%;
+        width: 100%; /* Filtros ocupan el ancho completo en móvil */
     }
 
-    #product-list {
-        width: 75%;
+    main {
+        flex-direction: column; /* Coloca los filtros arriba en móvil */
     }
 }
