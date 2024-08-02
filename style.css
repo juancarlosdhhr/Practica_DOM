@@ -175,6 +175,48 @@ main {
     margin: 0.5rem 0;
 }
 
+footer {
+    background-color: #294b8b;
+    color: #fff;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-column {
+    flex: 1 1 200px; /* Flexible basis for responsiveness */
+    min-width: 150px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffa500; /* Change the color if needed */
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
 /* Responsivo: tres productos por fila en pantallas grandes */
 @media (min-width: 768px) {
     #product-container {
@@ -195,7 +237,7 @@ main {
     main {
         flex-direction: column; /* Coloca los filtros arriba en móvil */
     }
-}
+
   
 header img {
     height: 90px; /* Ajusta el tamaño del logo */
@@ -214,6 +256,37 @@ display: none;
 }
 
 header .icons a span {
-    display: none; /* Hide the text on smaller screens */
+    display: none; 
 }
 
+#filters {
+    
+    padding: 1rem;
+    background-color: #f4f4f4;
+     
+
+}
+
+#filters h2 {
+font-size: 1rem; //Reduce el tamaño de la letras adaptado para pantallas pequeñas
+
+}
+
+
+
+footer {
+    text-align: center; /* Centra el texto del footer */
+}
+
+footer .footer-column {
+    width: 100%; /* Cada columna ocupará el 100% del ancho disponible */
+    float: none; /* Anula el flotado en pantallas pequeñas */
+    margin-bottom: 1rem; /* Espaciado entre las columnas */
+}
+
+footer .footer-column ul {
+    padding: 0;
+    list-style: none;
+}
+
+}

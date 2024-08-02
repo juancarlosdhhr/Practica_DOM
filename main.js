@@ -226,3 +226,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const filters = document.getElementById('filters');
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Scroll down - hide filters
+            filters.style.top = `-${filters.offsetHeight}px`;
+        } else {
+            // Scroll up - show filters
+            filters.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+});
