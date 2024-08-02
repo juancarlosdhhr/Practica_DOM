@@ -174,7 +174,7 @@ function filterProducts() {
     displayProducts(filteredProducts);
 }
 
-// Añadir evento al botón de filtro
+/* // Añadir evento al botón de filtro
 document.getElementById('filter-button').addEventListener('click', filterProducts);
 
 
@@ -190,6 +190,39 @@ document.getElementById('search-button').addEventListener('click', function() {
             product.style.display = 'block';
         } else {
             product.style.display = 'none';
+        }
+    });
+});
+ */
+
+//Para que al pulsar enter o hacer click en la lupa filtre los resultados
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const searchButton = document.getElementById('search-button');
+    const searchBar = document.getElementById('search-bar');
+    
+    // Función para ejecutar la búsqueda
+    function executeSearch() {
+        const searchText = searchBar.value.toLowerCase();
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const productName = card.querySelector('h2').textContent.toLowerCase();
+            if (productName.includes(searchText)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Event listener para el botón de búsqueda
+    searchButton.addEventListener('click', executeSearch);
+    
+    // Event listener para la tecla Enter en el campo de búsqueda
+    searchBar.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            executeSearch();
         }
     });
 });

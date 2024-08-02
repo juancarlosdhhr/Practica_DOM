@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #131b8f;
     padding: 1rem;
     display: flex;
     align-items: center; /* Alinea el logo y el texto verticalmente */
@@ -16,8 +16,9 @@ header {
 }
 
 header img {
-    height: 100px; /* Ajusta el tamaño del logo */
+    height: 120px; /* Ajusta el tamaño del logo */
     margin-right: 1rem; /* Espacio entre el logo y el texto */
+    
 }
 
 #search-bar-container {
@@ -65,10 +66,11 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #1e2372;
     text-decoration: none;
     display: flex;
     align-items: center;
+    padding-right: 10px;
 }
 
 nav a i {
@@ -116,7 +118,7 @@ main {
 /* Estilo para el botón de filtro */
 #filter-form button {
     padding: 10px 20px;
-    background-color: #681dca;
+    background-color: #f5c62dfd;
     color: white;
     border: none;
     border-radius: 5px;
@@ -124,7 +126,7 @@ main {
 }
 
 #filter-form button:hover {
-    background-color: #0056b3;
+    background-color: #f1833aea;
 }
 
 /* Estilo para la lista de productos */
@@ -194,3 +196,24 @@ main {
         flex-direction: column; /* Coloca los filtros arriba en móvil */
     }
 }
+  
+header img {
+    height: 90px; /* Ajusta el tamaño del logo */
+   margin-left: 0;
+}
+
+
+ li > .textlogin {
+   display: none;
+}
+
+li > .textshop {
+display: none;
+
+
+}
+
+header .icons a span {
+    display: none; /* Hide the text on smaller screens */
+}
+
