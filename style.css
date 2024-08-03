@@ -1,4 +1,11 @@
 /* Estilos generales */
+
+* {
+margin-left: 5px;
+
+
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,8 +18,8 @@ header {
     color: #131b8f;
     padding: 1rem;
     display: flex;
-    align-items: center; /* Alinea el logo y el texto verticalmente */
-    justify-content: space-between; /* Espacia el logo y el texto */
+    align-items: center; 
+    justify-content: space-between; 
 }
 
 header img {
@@ -87,7 +94,48 @@ main {
     height: calc(100vh - 70px); /* Ajusta el 70px al alto de tu header si es diferente */
 }
 
-/* Estilo para la barra lateral de filtros */
+
+/* Estilos para el slider de secciones */
+
+.slider-section {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+}
+
+.slider-item {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    margin-right: 20px;
+    background-color: #ddd;
+}
+
+.slider-item img {
+ 
+        
+        height: 100px;
+        object-fit: cover; /* Asegura que todas las imágenes tengan el mismo tamaño sin distorsión */
+        border-radius: 10px;
+        margin-bottom: 5px;
+}
+
+.slider-item p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+
+//Estilos para la barra lateral de filtros 
+
 #filters {
     width: 15%;
     padding: 1rem;
@@ -95,7 +143,14 @@ main {
     overflow-y: auto; /* Permite el desplazamiento si hay muchos filtros */
 }
 
-/* Estilo para el formulario de filtros */
+// Estilos para el formulario de filtros 
+
+#filters h2 {
+color: #ddd;
+
+
+}
+
 #filter-form {
     margin: 0;
     padding: 0;
@@ -117,7 +172,8 @@ main {
     box-sizing: border-box; /* Incluye padding en el ancho total */
 }
 
-/* Estilo para el botón de filtro */
+/* Estilos para el botón de filtro  */
+
 #filter-form button {
     padding: 10px 20px;
     background-color: #f5c62dfd;
@@ -131,14 +187,15 @@ main {
     background-color: #f1833aea;
 }
 
-/* Estilo para la lista de productos */
+/* Estilos para la lista de productos 
+ */
 #product-list {
     width: 80%;
     padding: 1rem;
     overflow-y: auto;
 }
 
-/* Estilo para la lista de productos */
+
 #product-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta las columnas automáticamente */
@@ -148,7 +205,7 @@ main {
     margin: 0;
 }
 
-/* Estilo para cada tarjeta de producto */
+/* Estilos para cada tarjeta de producto  */
 .product-card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -158,7 +215,7 @@ main {
     box-sizing: border-box; /* Incluye padding y border en el ancho y alto total */
 }
 
-/* Efecto al pasar el ratón sobre la tarjeta */
+/* Efecto al pasar el ratón sobre la tarjeta  */
 .product-card:hover {
     transform: scale(1.05);
 }
@@ -188,14 +245,14 @@ footer {
 }
 
 .footer-column {
-    flex: 1 1 200px; /* Flexible basis for responsiveness */
+    flex: 1 1 200px; 
     min-width: 150px;
 }
 
 .footer-column h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #ffa500; /* Change the color if needed */
+    color: #ffa500; 
 }
 
 .footer-column ul {
@@ -219,14 +276,16 @@ footer {
 
 
 
-/* Responsivo: tres productos por fila en pantallas grandes */
+/* Responsive: tres productos por fila en pantallas grandes */
+
 @media (min-width: 768px) {
     #product-container {
         grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     }
 }
 
-/* Responsivo: un producto por fila en pantallas pequeñas */
+/* Responsive: un producto por fila en pantallas pequeñas */
+
 @media (max-width: 767px) {
     #product-container {
         grid-template-columns: 1fr; /* Una columna */
@@ -277,11 +336,11 @@ font-size: 1rem; //Reduce el tamaño de la letras adaptado para pantallas peque�
 
 
 footer {
-    text-align: center; /* Centra el texto del footer */
+    text-align: center; 
 }
 
 footer .footer-column {
-    width: 100%; /* Cada columna ocupará el 100% del ancho disponible */
+    width: 100%; 
     float: none; /* Anula el flotado en pantallas pequeñas */
     margin-bottom: 1rem; /* Espaciado entre las columnas */
 }
