@@ -7,6 +7,8 @@ margin-left: 5px;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -89,6 +91,7 @@ nav a i {
 
 
 main {
+    flex: 1;
     display: flex;
     flex-direction: row;
     height: calc(100vh - 70px); /* Ajusta el 70px al alto de tu header si es diferente */
@@ -97,17 +100,19 @@ main {
 
 /* Estilos para el slider de secciones */
 
+
+
 .slider-section {
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px 0;
-    background-color: #ddd;
+    background-color: white ;
 }
 
 .slider-container {
     display: flex;
     align-items: center;
-    background-color: #ddd;
+    background-color: white;
 }
 
 .slider-item {
@@ -115,7 +120,7 @@ main {
     text-align: center;
     width: 200px;
     margin-right: 20px;
-    background-color: #ddd;
+    background-color: white;
 }
 
 .slider-item img {
@@ -132,44 +137,65 @@ main {
     font-weight: bold;
 }
 
+/* Para ocultar la barra del slider mientras se desliza */
 
+.slider-section {
+    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+}
 
-//Estilos para la barra lateral de filtros 
+.slider-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Habilitar el desplazamiento horizontal */
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+}
+
+/* Estilos para la barra lateral de filtros  */
 
 #filters {
     width: 15%;
     padding: 1rem;
     background-color: #294b8b;
-    overflow-y: auto; /* Permite el desplazamiento si hay muchos filtros */
+    overflow-y: auto; /* Permite el desplazamiento si hay muchos filtros */ 
 }
 
-// Estilos para el formulario de filtros 
+/* Estilos para el formulario de filtros  */
 
-#filters h2 {
-color: #ddd;
+#filters {
 
+background-color: white;
 
 }
+
 
 #filter-form {
     margin: 0;
     padding: 0;
+  
     
 }
 
 #filter-form > div {
     margin-bottom: 20px;
+    
 }
 
 #filter-form label {
     display: block;
     margin-bottom: 5px;
+    
 }
 
 #filter-form select {
     width: 80%; /* Ajusta el ancho de los desplegables */
     padding: 10px;
     box-sizing: border-box; /* Incluye padding en el ancho total */
+   
 }
 
 /* Estilos para el botón de filtro  */
@@ -187,12 +213,12 @@ color: #ddd;
     background-color: #f1833aea;
 }
 
-/* Estilos para la lista de productos 
- */
+/* Estilos para la lista de productos */
+
 #product-list {
     width: 80%;
-    padding: 1rem;
-    overflow-y: auto;
+    flex-grow: 1;
+
 }
 
 
@@ -203,7 +229,10 @@ color: #ddd;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    
 }
+
+
 
 /* Estilos para cada tarjeta de producto  */
 .product-card {
@@ -329,7 +358,7 @@ header .icons a span {
 }
 
 #filters h2 {
-font-size: 1rem; //Reduce el tamaño de la letras adaptado para pantallas pequeñas
+font-size: 1rem; /* Reduce el tamaño de la letras adaptado para pantallas pequeñas */
 
 }
 
@@ -337,6 +366,11 @@ font-size: 1rem; //Reduce el tamaño de la letras adaptado para pantallas peque�
 
 footer {
     text-align: center; 
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; /* Empuja el footer al final de la pagina */
 }
 
 footer .footer-column {
@@ -351,3 +385,4 @@ footer .footer-column ul {
 }
 
 }
+

@@ -228,12 +228,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* Para hacer que la barra lateral de filtros se desplace hacia arriba y se oculte cuando el usuario hace scroll hacia abajo en la página. 
+Cuando el usuario hace scroll hacia arriba, los filtros vuelven a ser visibles. */
+
 document.addEventListener("DOMContentLoaded", function() {
     const filters = document.getElementById('filters');
     let lastScrollTop = 0;
 
     window.addEventListener("scroll", function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
             // Scroll down - hide filters
             filters.style.top = `-${filters.offsetHeight}px`;
