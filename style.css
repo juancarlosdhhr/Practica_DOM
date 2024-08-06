@@ -130,6 +130,7 @@ main {
 
 
 .slider-section {
+   
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px 0;
@@ -137,6 +138,14 @@ main {
 }
 
 .slider-container {
+ 
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  
+   
     display: flex;
     align-items: center;
     background-color: white;
