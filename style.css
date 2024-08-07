@@ -139,15 +139,11 @@ main {
 
 .slider-container {
  
-    width: 100%;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  
-   
-    display: flex;
-    align-items: center;
+   display: flex;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   padding: 10px;
+   box-sizing: border-box;
     background-color: white;
 }
 
