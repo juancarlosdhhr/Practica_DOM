@@ -174,7 +174,7 @@ function filterProducts() {
     displayProducts(filteredProducts);
 }
 
-/* // Añadir evento al botón de filtro
+// Añadir evento al botón de filtro
 document.getElementById('filter-button').addEventListener('click', filterProducts);
 
 
@@ -193,7 +193,7 @@ document.getElementById('search-button').addEventListener('click', function() {
         }
     });
 });
- */
+ 
 
 //Para que al pulsar enter o hacer click en la lupa filtre los resultados
 
