@@ -369,6 +369,8 @@ align-items: center;
 
     #filters {
         width: 100%; /* Filtros ocupan el ancho completo en móvil */
+        padding: 1rem;
+        background-color: #f4f4f4;
     }
 
     main {
@@ -406,11 +408,7 @@ header .icons a span {
     display: none; 
 }
 
-#filters {
-    
-    padding: 1rem;
-    background-color: #f4f4f4;
-     
+
 
 }
 
@@ -441,5 +439,5 @@ footer .footer-column ul {
     list-style: none;
 }
 
-}
+
 
