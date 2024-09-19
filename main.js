@@ -195,6 +195,25 @@ document.getElementById('search-button').addEventListener('click', function() {
 });
  
 
+// Función para buscar productos por cualquier atributo en la barra de búsqueda
+// Función para buscar productos por nombre en el buscador
+const buscarProductos = () => {
+    const terminoBusqueda = document.getElementById('search-bar').value.toLowerCase(); // El término de búsqueda
+  
+    const productosFiltrados = products.filter(product =>
+      product.name.toLowerCase().includes(terminoBusqueda) ||
+      product.stars.toLowerCase().includes(terminoBusqueda) ||
+      product.reviews.toLowerCase().includes(terminoBusqueda) ||
+      product.seller.toLowerCase().includes(terminoBusqueda) ||
+      product.processor.toLowerCase().includes(terminoBusqueda) ||
+      product.brand.toLowerCase().includes(terminoBusqueda) ||
+      product.category.toLowerCase().includes(terminoBusqueda)
+
+    );
+    
+    listaProductos(productosFiltrados); // Actualiza la lista de productos
+  };
+
 //Para que al pulsar enter o hacer click en la lupa filtre los resultados
 
 
