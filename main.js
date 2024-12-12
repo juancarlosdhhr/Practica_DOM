@@ -177,92 +177,31 @@ function filterProducts() {
 // Añadir evento al botón de filtro
 document.getElementById('filter-button').addEventListener('click', filterProducts);
 
-
-//Funcionalidad del Botón de Búsqueda
-
-document.getElementById('search-button').addEventListener('click', function() {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    const products = document.querySelectorAll('.product-card');
-
-    products.forEach(product => {
-        const productName = product.querySelector('h2').innerText.toLowerCase();
-        if (productName.includes(query)) {
-            product.style.display = 'block';
-        } else {
-            product.style.display = 'none';
-        }
-    });
-});
- 
-
 // Función para buscar productos por cualquier atributo en la barra de búsqueda
-// Función para buscar productos por nombre en el buscador
-const buscarProductos = () => {
+function buscarProductos() {
     const terminoBusqueda = document.getElementById('search-bar').value.toLowerCase(); // El término de búsqueda
-  
+    
     const productosFiltrados = products.filter(product =>
-      product.name.toLowerCase().includes(terminoBusqueda) ||
-      product.stars.toLowerCase().includes(terminoBusqueda) ||
-      product.reviews.toLowerCase().includes(terminoBusqueda) ||
-      product.seller.toLowerCase().includes(terminoBusqueda) ||
-      product.processor.toLowerCase().includes(terminoBusqueda) ||
-      product.brand.toLowerCase().includes(terminoBusqueda) ||
-      product.category.toLowerCase().includes(terminoBusqueda)
-
+        product.name.toLowerCase().includes(terminoBusqueda) || 
+        product.seller.toLowerCase().includes(terminoBusqueda) ||
+        product.brand.toLowerCase().includes(terminoBusqueda) ||
+        product.category.toLowerCase().includes(terminoBusqueda) ||
+        product.processor.toLowerCase().includes(terminoBusqueda) ||
+        product.price.toString().includes(terminoBusqueda) || // Convertir precio a cadena
+        product.stars.toString().includes(terminoBusqueda) || // Convertir estrellas a cadena
+        product.reviews.toString().includes(terminoBusqueda) // Convertir reseñas a cadena
     );
     
-    listaProductos(productosFiltrados); // Actualiza la lista de productos
-  };
+    // Mostrar los productos filtrados
+    displayProducts(productosFiltrados);
+}
 
-//Para que al pulsar enter o hacer click en la lupa filtre los resultados
+// Añadir evento al botón de búsqueda
+document.getElementById('search-button').addEventListener('click', buscarProductos);
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const searchButton = document.getElementById('search-button');
-    const searchBar = document.getElementById('search-bar');
-    
-    // Función para ejecutar la búsqueda
-    function executeSearch() {
-        const searchText = searchBar.value.toLowerCase();
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            const productName = card.querySelector('h2').textContent.toLowerCase();
-            if (productName.includes(searchText)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+// Event listener para la tecla Enter en el campo de búsqueda
+document.getElementById('search-bar').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        buscarProductos();
     }
-    
-    // Event listener para el botón de búsqueda
-    searchButton.addEventListener('click', executeSearch);
-    
-    // Event listener para la tecla Enter en el campo de búsqueda
-    searchBar.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            executeSearch();
-        }
-    });
-});
-
-
-/* Para hacer que la barra lateral de filtros se desplace hacia arriba y se oculte cuando el usuario hace scroll hacia abajo en la página. 
-Cuando el usuario hace scroll hacia arriba, los filtros vuelven a ser visibles. */
-
-document.addEventListener("DOMContentLoaded", function() {
-    const filters = document.getElementById('filters');
-    let lastScrollTop = 0;
-
-    window.addEventListener("scroll", function() {
-        let scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            // Scroll down - hide filters
-            filters.style.top = `-${filters.offsetHeight}px`;
-        } else {
-            // Scroll up - show filters
-            filters.style.top = "0";
-        }
-        lastScrollTop = scrollTop;
-    });
 });
